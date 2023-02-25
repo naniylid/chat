@@ -61,6 +61,16 @@ module.exports = {
         ],
       },
       {
+        test: /\.ui/,
+        include: [path.resolve(__dirname, 'ui')],
+        use: [
+          { loader: './scripts/html-inject-loader.js' },
+          {
+            loader: 'raw-loader',
+          },
+        ],
+      },
+      {
         test: /\.(jpe?g|png|gif|svg|eot|ttf|woff|woff2)$/i,
         loader: 'file-loader',
         options: {
