@@ -15,7 +15,10 @@ export default class MegaChat {
     );
 
     this.ui = {
-      loginWindow: new LoginWindow(document.querySelector('#login')),
+      loginWindow: new LoginWindow(
+        document.querySelector('#login'),
+        this.onLogin.bind(this)
+      ),
       mainWindow: new MainWindow(document.querySelector('#main')),
       userName: new UserName(document.querySelector('[data-role=user-name]')),
       userList: new UserList(document.querySelector('[data-role=user-list]')),
